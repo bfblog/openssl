@@ -20,3 +20,6 @@ jobs:
          --file Dockerfile 
          --tag bfblog/openssl:$(date +%s) 
          --build-arg REVISION=${GITHUB_SHA}
+         --build-arg VERSION=${GITHUB_REF}
+         --build-arg IMAGE=bfblog/openssl
+         --build-arg BUILD_DATE=$(date +%s)

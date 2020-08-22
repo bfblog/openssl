@@ -15,4 +15,8 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag bfblog/openssl:$(date +%s) --build-arg REVISION=${GITHUB_SHA}
+      run: >
+         docker build . 
+         --file Dockerfile 
+         --tag bfblog/openssl:$(date +%s) 
+         --build-arg REVISION=${GITHUB_SHA}

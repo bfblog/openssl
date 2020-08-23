@@ -13,9 +13,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: 
-       - actions/checkout@v2
-       - FranzDiebold/github-env-vars-action@v1.2.0
+    - uses: actions/checkout@v2
+    - uses: FranzDiebold/github-env-vars-action@v1.2.0
+      
     - name: Print environment variables
       run: |
         echo "GITHUB_REPOSITORY_SLUG=$GITHUB_REPOSITORY_SLUG"

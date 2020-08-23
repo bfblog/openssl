@@ -25,7 +25,7 @@ jobs:
          --build-arg BUILD_DATE=$(date +%s)
           
     - name: Login to Docker HUB
-      run: docker login -u ${{ secrets.DOCKER_USER }} -p ${{ secrets.DOCKER_PASS }}
+      run: docker login -u ${{ secrets.DOCKER_USER }} -p ${{ secrets.DOCKER_PASSWORD }}
 
     - name: Publish Docker image
       run: docker push bfblog/spark:latest

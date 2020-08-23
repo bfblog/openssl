@@ -4,10 +4,12 @@ on:
   workflow_dispatch:
   push:
     branches: 
-      - '**'
+      - 'master'
+      - 'v**'
   pull_request:
-    branches: 
-      - '**'
+    branches:
+      - 'master' 
+      - 'v**'
 
 jobs:
 

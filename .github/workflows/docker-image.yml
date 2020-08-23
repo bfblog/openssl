@@ -18,7 +18,7 @@ jobs:
       run: >
          docker build . 
          --file Dockerfile 
-         --tag bfblog/openssl:$(date +%s) 
+         --tag bfblog/openssl:${GITHUB_REF}
          --build-arg REVISION=${GITHUB_SHA}
          --build-arg VERSION=${GITHUB_REF}
          --build-arg IMAGE=bfblog/openssl
@@ -28,4 +28,4 @@ jobs:
       run: docker login -u ${{ secrets.DOCKER_USER }} -p ${{ secrets.DOCKER_PASSWORD }}
 
     - name: Publish Docker image
-      run: docker push bfblog/openssl
+      run: docker push bfblog/openssl:${GITHUB_REF}

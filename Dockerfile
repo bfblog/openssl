@@ -1,4 +1,4 @@
-FROM alpine:3.12.0
+FROM alpine:3.13.1
 
 ARG BUILD_DATE
 ARG REVISION
@@ -20,7 +20,7 @@ LABEL org.opencontainers.image.ref.name="${IMAGE}"
 LABEL org.opencontainers.image.title="OpenSSL"
 LABEL org.opencontainers.image.description="An OpenSSL Docker Image"
 
-RUN apk add openssl=1.1.1g-r0 --no-cache
+RUN apk add openssl=1.1.1i-r0 --no-cache
 
 WORKDIR /workspace
 

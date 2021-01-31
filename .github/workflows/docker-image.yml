@@ -38,7 +38,7 @@ jobs:
          docker build . 
          --file Dockerfile 
          --tag bfblog/openssl:${GITHUB_REF##*/}
-         --tag bfblog/openssl:LATEST
+         --tag bfblog/openssl:latest
          --build-arg REVISION=${GITHUB_SHA}
          --build-arg VERSION=${GITHUB_REF}
          --build-arg IMAGE=bfblog/openssl
@@ -48,4 +48,4 @@ jobs:
       run: docker login -u ${{ secrets.DOCKER_USER }} -p ${{ secrets.DOCKER_PASSWORD }}
 
     - name: Publish Docker image
-      run: docker push bfblog/openssl:LATEST
+      run: docker push bfblog/openssl:latest
